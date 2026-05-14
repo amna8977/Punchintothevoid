@@ -1,4 +1,4 @@
-# Punch into the Void
+# The Crashout Zone
 
 Sometimes you do not need a productivity app. Sometimes you need to punch something and scream your feelings into a browser-based void.
 
@@ -7,6 +7,7 @@ This project connects a physical punching bag button to a little web page. You c
 ## What Is In Here
 
 - `Screamintoahole.html` is the web page.
+- `Intro.html` is also the web page.
 - `Punchingbag.ino` is the Arduino sketch that detects a punch/button press.
 - `punching_bag_integration.py` connects the hardware, microphone, text-to-speech, and browser together.
 - `This is fine.jpg` is the background image for the page.
