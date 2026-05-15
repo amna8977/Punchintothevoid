@@ -1,13 +1,13 @@
 # The Crashout Zone
 
-Sometimes you do not need a productivity app. Sometimes you need to punch something and scream your feelings into a browser-based void.
+Sometimes you do not need a productivity app. Sometimes you need to punch something, yell your feelings at a computer, and let the void do its thing.
 
-This project connects a physical punching bag button to a little web page. You can type a scream, use voice input, or let the Python bridge listen for punches from an Arduino/Pico and control the page for you.
+The Crashout Zone connects a physical punching bag button to a browser page. You can type a crashout, use voice input, or let the Python bridge listen for punches from an Arduino/Pico and control the page for you.
 
 ## What Is In Here
 
 - `Screamintoahole.html` is the web page.
-- `Intro.html` is also the web page.
+- `intro.html` is also a web page
 - `Punchingbag.ino` is the Arduino sketch that detects a punch/button press.
 - `punching_bag_integration.py` connects the hardware, microphone, text-to-speech, and browser together.
 - `This is fine.jpg` is the background image for the page.
@@ -16,7 +16,7 @@ This project connects a physical punching bag button to a little web page. You c
 
 The Arduino watches a button on pin `2`. When the button is pressed, it sends the word `punch` over serial.
 
-The Python script listens for that serial message. The first punch starts the interaction, asks whether you want to scream into a hole, records your answer, and puts your spoken scream into the web page. A second punch sends it.
+The Python script listens for that serial message. The first punch starts the interaction, asks whether you want to enter The Crashout Zone, records your answer, and puts your spoken crashout into the web page. A second punch sends it.
 
 
 ## Try Just the Website
@@ -31,13 +31,13 @@ Screamintoahole.html
 
 The website lets you:
 
-- type a scream
+- type a crashout
 - use browser voice recognition, if your browser supports it
-- keep a local count of how many screams have been sent
+- keep a local count of how many crashouts have been sent
 
 Chrome or Edge will usually work best for the voice button.
 
-## Hardware
+# Hardware
 
 The Arduino sketch expects a simple button or impact switch:
 
@@ -72,7 +72,7 @@ to:
 
 You can also remove that line if your Arduino setup already includes it automatically.
 
-## Python Setup
+# Python Setup
 
 From this project folder, create and activate a virtual environment:
 
@@ -113,7 +113,7 @@ If Selenium cannot find ChromeDriver by itself, download ChromeDriver and set:
 CHROMEDRIVER_PATH = r'C:\path\to\chromedriver.exe'
 ```
 
-## Running Everything
+# Running Everything
 
 1. Plug in the Arduino or Pico.
 2. Upload `Punchingbag.ino`.
@@ -129,8 +129,8 @@ Chrome should open the web page.
 Then the flow is:
 
 1. Punch once.
-2. Say yes when it asks if you want to scream into a hole.
-3. Say your scream.
+2. Say yes when it asks if you want to enter The Crashout Zone.
+3. Say your crashout.
 4. Punch again to send it.
 
 # Troubleshooting
@@ -153,5 +153,4 @@ Check your microphone permissions, default input device, and whether `pyaudio` i
 
 # Privacy Note
 
-The web page runs locally in your browser. The Python speech recognition uses Google's online recognition through the `SpeechRecognition` package, so that part needs an internet connection.
-
+The web page runs in your browser. The Python speech recognition uses Google's online recognition through the `SpeechRecognition` package, so that part needs an internet connection.
